@@ -1,34 +1,44 @@
 from PIL import Image, ImageColor, ImageDraw 
 
-"""Read map data from list"""
+"""Reads map data from list"""
 class Map:
     def __init__(self, filename):
-        """Append the 'for' loop temporary variable 'e' to the new empty list"""
+        """Appends the 'for' loop temporary variable 'e' to the new empty list"""
         self.elevations = []
         with open(filename) as file:
             for line in file:
                 self.elevations.append([int(e) for e in line.split()])
-        """Find/print max/min elevation points with generator"""   
+        """Finds max/min elevation points with 'generators'?"""   
         self.max_elevation = max([max(row) for row in self.elevations])
         self.min_elevation = min([min(row) for row in self.elevations])
 
 
 def get_elevation(self, x, y):
-    """Switch x and y coordinates for readability"""
+    """Switches x and y coordinates for 'readability'?"""
     return self.elevations[y][x]
 
 
 def get_intensity(self, x, y):
-    """Get elevation intensity"""
+    """Gets elevation color intensity"""
     return self.get_elevation(x, y) / self.max_elevation * 255
     return (self.get_elevation(x, y) - self.min_elevation) / (
         self.max_elevation - self.min_elevation) * 255
 
 
-# """Draw colored pixel image of map using coordinate data"""
-# class DrawMap:
-#     def __init__(self, ):
+def __init__get_map:(self, x, y):
+    """Plots colored pixels in a new image creating a map, saves the new image"""
+    
+    im = Image.new('RGBA', (600, 600))
 
+    im.getpixel((0, 0))
+
+    for x in range(600):
+        for y in range(600):
+            im.putpixel((x, y), ("""color intensity"""))
+    from PIL import ImageColor
+    for x in range(600):
+        for y in range
+    
 
 # """Draw colored pixel route of lowest-elevation-change"""
 # class DrawRoute:
@@ -38,11 +48,19 @@ def get_intensity(self, x, y):
 
 if __name__ == "__main__":
     map_data = Map("elevation_small.txt") 
-    print(map_data.min_elevation)
+    
 
 
 # from PIL import Image
+    # img = Image.new("RGB", (600, 600), (255, 255, 255))
+    # draw = ImageDraw.Draw(img)
+    # square = Square((50, 50), 30)
+    # draw.rectangle([
+    #     square.origin,
+    #     (square.origin[0]) + square.width, square.origin[1] + square.length)],
+    #                 fill=0
+    # img.save("test.jpg", "JPEG")
 
-#     img = Image.new("RGBA", (600, 600))
-#     img.save("what.png", "PNG")
+
+
 
